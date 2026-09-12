@@ -1,0 +1,14 @@
+body {
+  padding: 30px;
+}
+
+/* Top banner using your image */
+.top-banner {
+    width: 100%;
+    height: 230px;
+    background-image: url('Bander.jpg');
+    /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    margin-top: 40px;
+}
