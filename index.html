@@ -159,17 +159,85 @@
 
 	
 	</td>
-    <td><img src="./app/screen_shots/SplitWordLoop.jpg" alt="FlashCardLoop Application" width="500" height="600"></td>
+    <td><img src="./app/screen_shots/SplitWordLoop.jpg" alt="SplitWordLoop Application" width="500" height="600"></td>
   </tr>
    
   <tr>
-    <td>ConfigLoop</td>
-		<td>Screen</td>
+    <td>
+		<h1>How to Generate Your Exam Config Temple </h1>
+		
+		<a href="https://progressivepull.github.io/ConfigLoop/">ConfigLoop Application</a><br><br>
+		
+	    <a href="https://github.com/progressivepull/ConfigLoop">ConfigLoop GitHub Sites</a><br><br>
+	
+		<section>
+		  <h2>Instructions for Users</h2>
+
+		  <h3>1. Enter the Exam Title</h3>
+		  <p>In the <strong>Exam Title</strong> field, type the full name of the exam or chapter.</p>
+		  <p><em>Example:</em> 03 Databricks High Level Architecture</p>
+
+		  <h3>2. Enter the Folder Path(s)</h3>
+		  <p>In the <strong>Folder Paths</strong> field, enter the folder location(s) containing the exam materials or source files.</p>
+
+		  <h3>3. Generate the Configuration</h3>
+		  <p>Click <strong>Generate Config</strong>. The tool will:</p>
+		  <ul>
+			<li>Extract the leading chapter number from the title, if present.</li>
+			<li>Convert the exam title into a filename‑friendly format by replacing spaces and separators with underscores.</li>
+			<li>Build a JSON configuration using the title and provided folder path(s).</li>
+		  </ul>
+
+		  <h3>4. Review the Generated JSON</h3>
+		  <p>Verify that the exam name, chapter number, normalized folder name, and all paths are correct before using the file in another system.</p>
+
+		  <h3>5. Download or Copy the Result</h3>
+		  <p>Save the generated configuration as a <code>.json</code> file, or copy its contents into the configuration location required by your workflow.</p>
+		  
+		  <h2>Final JSON Template Upload</h2>
+
+		  <p>After generating the configuration, <strong>do not upload the configuration block by itself</strong>.  
+			 Instead, insert the generated <code>config</code> section into the final exam JSON template, which must contain both required top‑level elements:</p>
+
+		  <h3>1. Top‑level <code>config</code> object</h3>
+		  <p>This object must include exam settings such as:</p>
+		  <ul>
+			<li>Exam titles</li>
+			<li>URLs and folder names</li>
+			<li>Shuffle settings</li>
+			<li>Time limit</li>
+		  </ul>
+
+		  <h3>2. Top‑level <code>questions</code> array</h3>
+		  <p>This array must contain all multiple‑choice questions for the exam.</p>
+
+		  <h3>Required File Structure</h3>
+		  <p>The final upload must be a valid <code>.json</code> file following this overall structure:</p>
+
+		  <pre>
+		{
+		  "config": { ... },
+		  "questions": [ ... ]
+		}
+		  </pre>
+		</section>
+	
+	
+	</td>
+	<td><img src="./app/screen_shots/ConfigLoop.jpg" alt="ConfigLoop Application" width="500" height="600"></td>
   </tr> 
   
   <tr>
-    <td>FastGeneratorLoop</td>
-		<td>Screen</td>
+    <td>
+		<h1>Text Quiz File -> JSON File Converter</h1>
+		
+		<a href="https://progressivepull.github.io/FastGeneratorLoop/">FastGeneratorLoop Application</a><br><br>
+		
+	    <a href="https://github.com/progressivepull/FastGeneratorLoop">FastGeneratorLoop GitHub Sites</a><br><br>
+	
+	
+	</td>
+	<td><img src="./app/screen_shots/FastGeneratorLoop.jpg" alt="FastGeneratorLoop Application" width="500" height="600"></td>
   </tr>
     
   <tr>
