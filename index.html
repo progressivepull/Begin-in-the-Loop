@@ -487,13 +487,149 @@
   </tr>
     
   <tr>
-    <td>DatabaseGeneratorLoop</td>
-		<td>Screen</td>
+    <td>
+	DatabaseGeneratorLoop
+	
+	  <h1>Quiz Builder — User Instructions</h1>
+	  
+	  	  <a href="https://progressivepull.github.io/LearnLoop/">DatabaseGeneratorLoop Application</a><br><br>
+		
+	      <a href="https://github.com/progressivepull/DatabaseGeneratorLoop">DatabaseGeneratorLoop GitHub Sites</a><br><br>
+
+		  <p>
+			This tool lets you create a quiz JSON file from scratch using a form, or upload an existing quiz JSON file to edit it, then export the result as a <code>.json</code> file compatible with the Quiz App.
+		  </p>
+
+		  <p>You have two ways to start: <strong>Create New</strong> or <strong>Upload Existing</strong>.</p>
+
+		  <h2>Option A: Create a New Quiz from Scratch</h2>
+		  <ol>
+			<li>In the question count field, enter how many questions you want to create.</li>
+			<li>Click <strong>Generate Fields</strong>. A form section will appear for each question, numbered sequentially.</li>
+			<li>Fill in each question block (see “Filling Out a Question” below).</li>
+			<li>When you're done, click <strong>Generate JSON</strong> to download your quiz file.</li>
+		  </ol>
+
+		  <h2>Option B: Upload an Existing Quiz JSON</h2>
+		  <ol>
+			<li>Click the upload field and select your existing quiz <code>.json</code> file.</li>
+			<li>
+			  The tool will automatically read the file and generate a matching form pre-filled with its questions,
+			  descriptions, options, answers, and code.
+			</li>
+			<li>Make whatever edits you need (see “Filling Out a Question” below).</li>
+			<li>Click <strong>Generate JSON</strong> to download the updated file.</li>
+		  </ol>
+
+		  <p>
+			<strong>Note:</strong> If the file is invalid or missing a <code>questions</code> array, you'll see an alert and nothing will load — check that the file matches the expected format.
+		  </p>
+
+		  <h2>Filling Out a Question</h2>
+
+		  <table>
+			<tr>
+			  <th>Field</th>
+			  <th>What to do</th>
+			</tr>
+			<tr>
+			  <td>Problem Description</td>
+			  <td>
+				Optional context lines shown above the question. Click <strong>+ Add Line</strong> to add as many lines as needed.
+				Leave blank if not needed.
+			  </td>
+			</tr>
+			<tr>
+			  <td>Question Text</td>
+			  <td>
+				The question itself. Click <strong>+ Add Line</strong> to add multiple lines — useful for longer or multi‑part questions.
+			  </td>
+			</tr>
+			<tr>
+			  <td>Option A–E</td>
+			  <td>
+				Enter the text for each answer choice. You don't have to fill in all five — leave unused ones blank.
+			  </td>
+			</tr>
+			<tr>
+			  <td>Correct Answer</td>
+			  <td>Choose the letter (A–E) of the correct option from the dropdown.</td>
+			</tr>
+			<tr>
+			  <td>Code</td>
+			  <td>
+				Optional code snippet to display with the question. Paste or type it into the text box — each line is preserved.
+				Leave blank if not needed.
+			  </td>
+			</tr>
+			<tr>
+			  <td>Language</td>
+			  <td>
+				If you added code, select its language (Python or SQL) so it displays with syntax highlighting.
+				Leave blank if there's no code.
+			  </td>
+			</tr>
+		  </table>
+
+		  <h2>Adding and Removing Questions</h2>
+		  <ul>
+			<li><strong>+ Add Question Section:</strong> Adds a new blank question block right after the one you clicked.</li>
+			<li><strong>Delete Question Section:</strong> Removes that question block entirely.</li>
+		  </ul>
+
+		  <p>
+			After adding or deleting, all questions are automatically renumbered — you don't need to fix numbering,
+			and all field IDs stay in sync behind the scenes.
+		  </p>
+
+		  <h2>Generating and Downloading Your Quiz File</h2>
+		  <ol>
+			<li>Once your questions are filled out, click <strong>Generate JSON</strong>.</li>
+			<li>
+			  The tool packages everything into a JSON file — including a config section with default settings
+			  (exam name, links, shuffle options, time limit, etc.).
+			</li>
+			<li>Your browser will download the file as <code>template.json</code>.</li>
+		  </ol>
+
+		  <p>
+			<strong>Tip:</strong> Rename the downloaded file to something more descriptive (e.g. <code>chapter3-quiz.json</code>)
+			and, if needed, open it in a text editor afterward to fill in config fields like
+			<code>exam_name</code> or <code>time_limit_minutes</code>.
+		  </p>
+
+		  <h2>Troubleshooting</h2>
+		  <ul>
+			<li>
+			  <strong>Generate JSON button isn't visible:</strong>
+			  It only appears after you click <strong>Generate Fields</strong> (new quiz) or after uploading a valid JSON file.
+			</li>
+			<li>
+			  <strong>"Invalid JSON format" alert on upload:</strong>
+			  The file doesn't have a <code>questions</code> array — confirm you're uploading a proper quiz JSON file.
+			</li>
+			<li>
+			  <strong>"Failed to parse JSON file" alert:</strong>
+			  The file itself isn't valid JSON — check for syntax issues like missing commas or brackets.
+			</li>
+			<li>
+			  <strong>A question's fields look empty after upload:</strong>
+			  That question may be missing that field in the source file — normal if the original quiz didn't include it.
+			</li>
+			<li>
+			  <strong>Options or answer didn't carry over:</strong>
+			  Confirm the source JSON uses the expected structure — options as an object with keys A–E, and answer as a single letter.
+			</li>
+  
+	</td>
+	<td><img src="./app/screen_shots/DatabaseGeneratorLoop.jpg" alt="DatabaseGeneratorLoop Application" width="500" height="600"></td>
   </tr>
     
   <tr>
-    <td>LoopScript</td>
-		<td>Screen</td>
+    <td>
+	LoopScript
+	</td>
+	<td>Screen</td>
   </tr>
     
 </table>
