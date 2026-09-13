@@ -348,8 +348,142 @@
   </tr>
     
   <tr>
-    <td>LearnLoop</td>
-		<td>Screen</td>
+    <td>
+
+
+		  <h1>Quiz App — User Instructions</h1>
+		  
+		  <a href="https://progressivepull.github.io/LearnLoop/">LearnLoop Application</a><br><br>
+		
+	      <a href="https://github.com/progressivepull/LearnLoop">LearnLoop GitHub Sites</a><br><br>
+
+		  <p>
+			This app lets you load a quiz JSON file (the kind produced by the Quiz Converter tool)
+			and take the quiz interactively in your browser.
+		  </p>
+
+		  <h2>Step 1: Load Your Quiz File</h2>
+		  <ol>
+			<li>Open the quiz app in your browser.</li>
+			<li>Click the file input field and select your quiz <code>.json</code> file.</li>
+			<li>
+			  If the file loads successfully, it's ready to use. If it's invalid or missing required data,
+			  check your browser's developer console for an error message.
+			</li>
+		  </ol>
+
+		  <h2>Step 2: Start the Quiz</h2>
+		  <ol>
+			<li>Click the <strong>Start</strong> button.</li>
+			<li>
+			  If you haven't selected a file yet, a dialog will pop up asking you to choose one —
+			  click <strong>OK</strong>, then select your file and click <strong>Start</strong> again.
+			</li>
+			<li>
+			  Once a valid quiz is loaded, clicking <strong>Start</strong> takes you to the quiz screen
+			  and loads the first question.
+			</li>
+		  </ol>
+
+		  <h2>Step 3: Answer Questions</h2>
+
+		  <p>On the quiz screen you'll see:</p>
+		  <ul>
+			<li>Exam title (if one is set in the quiz's config)</li>
+			<li>Question number and a progress bar showing how far through the quiz you are</li>
+			<li>Problem description (if provided) — extra context or background for the question</li>
+			<li>Code snippet (if provided) — shown with syntax highlighting</li>
+			<li>Question text</li>
+			<li>Answer options as clickable buttons</li>
+		  </ul>
+
+		  <p>To answer:</p>
+		  <ol>
+			<li>Click the option you believe is correct.</li>
+			<li>
+			  You'll immediately see feedback:
+			  <ul>
+				<li>Green / “Correct!” if you picked the right answer.</li>
+				<li>
+				  Red / “Wrong! Correct answer is X” if you picked the wrong one — the correct option
+				  will also be highlighted in green.
+				</li>
+			  </ul>
+			</li>
+			<li>Once you've answered, all options become locked (you can't change your answer).</li>
+		  </ol>
+
+		  <h2>Step 4: Move to the Next Question</h2>
+		  <ol>
+			<li>Click <strong>Next</strong> to move on.</li>
+			<li>
+			  If you try to click <strong>Next</strong> before selecting an answer, a dialog will remind
+			  you to choose an option first.
+			</li>
+			<li>After the last question, clicking <strong>Next</strong> takes you to the Results screen automatically.</li>
+		  </ol>
+
+		  <h2>Step 5: Optional Reference Links</h2>
+		  <p>
+			Depending on how the quiz file's config is set up, you may see buttons to open additional
+			resources in a new browser tab:
+		  </p>
+		  <ul>
+			<li><strong>Explanation</strong> — a detailed explanation for the current question</li>
+			<li><strong>Answer</strong> — a reference answer page for the current question</li>
+			<li><strong>Terms</strong> — a glossary or terms/definitions page</li>
+			<li><strong>Readme</strong> — general background/readme content for the quiz</li>
+		  </ul>
+		  <p>
+			These links only work if the quiz file's config includes the matching URL settings —
+			if a button doesn't do anything, that resource likely wasn't configured for this quiz.
+		  </p>
+
+		  <h2>Step 6: View Your Results</h2>
+		  <p>When you finish all questions, the Results screen shows:</p>
+		  <ul>
+			<li><strong>Correct</strong> — number of questions you got right</li>
+			<li><strong>Wrong</strong> — number of questions you got wrong</li>
+			<li><strong>Score</strong> — your percentage score</li>
+		  </ul>
+
+		  <h2>Step 7: Restart</h2>
+		  <p>Click <strong>Restart</strong> at any time during the quiz to:</p>
+		  <ul>
+			<li>Return to the start screen</li>
+			<li>Clear the loaded file selection</li>
+			<li>Reset your progress (correct/wrong counts and current question)</li>
+		  </ul>
+		  <p>You'll need to re-select your quiz file to take it again.</p>
+
+		  <h2>Troubleshooting</h2>
+		  <ul>
+			<li>
+			  <strong>Start button does nothing / dialog keeps appearing:</strong>
+			  Make sure a <code>.json</code> file is actually selected in the file input before clicking Start.
+			</li>
+			<li>
+			  <strong>"Invalid JSON file" in console:</strong>
+			  The file isn't valid JSON — check it opens correctly in a text editor and has no syntax errors.
+			</li>
+			<li>
+			  <strong>Quiz loads but nothing shows on screen:</strong>
+			  The file's <code>questions</code> array may be empty, or missing the fields the app expects
+			  (each question needs at minimum a <code>question</code> and <code>options</code> field).
+			</li>
+			<li>
+			  <strong>Code snippet doesn't appear:</strong>
+			  Code only displays if the question includes non-empty lines under
+			  <code>resource.code.lines</code>.
+			</li>
+			<li>
+			  <strong>Explanation/Answer/Terms/Readme buttons don't work:</strong>
+			  These require corresponding URL fields to be filled in under the quiz file's
+			  <code>config</code> section.
+			</li>
+		  </ul>
+	</td>
+	<td><img src="./app/screen_shots/LearnLoop.jpg" alt="LearnLoop Application" width="500" height="600"></td>
   </tr>
     
   <tr>
