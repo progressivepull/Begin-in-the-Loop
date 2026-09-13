@@ -234,6 +234,113 @@
 		<a href="https://progressivepull.github.io/FastGeneratorLoop/">FastGeneratorLoop Application</a><br><br>
 		
 	    <a href="https://github.com/progressivepull/FastGeneratorLoop">FastGeneratorLoop GitHub Sites</a><br><br>
+		
+
+		<p>This tool converts a plain text (.txt) file containing quiz questions into a structured JSON file.</p>
+
+		<h2>Step 1: Format Your TXT File</h2>
+
+		<p>Your text file must follow this pattern for each question:</p>
+
+		<pre>
+		Question 1
+		What is the capital of France?
+		A. London
+		B. Paris
+		C. Berlin
+		D. Madrid
+		Correct Answer: B
+
+		Question 2
+		Which planet is known as the Red Planet?
+		A. Venus
+		B. Mars
+		C. Jupiter
+		Correct Answer: B
+		</pre>
+
+		<h3>Formatting rules:</h3>
+
+		<table>
+		  <tr>
+			<th>Element</th>
+			<th>Rule</th>
+		  </tr>
+		  <tr>
+			<td>Question start</td>
+			<td>Must begin with the word <code>Question</code> followed by a number (e.g. <code>Question 1</code>, <code>Question 2</code>). Not case-sensitive.</td>
+		  </tr>
+		  <tr>
+			<td>Question text</td>
+			<td>Any line(s) between the "Question #" line and the first option. You can use multiple lines for longer questions.</td>
+		  </tr>
+		  <tr>
+			<td>Answer options</td>
+			<td>Must start with a single letter <strong>A through E</strong>, followed by a period and a space (e.g. <code>A. Paris</code>). Up to 5 options per question.</td>
+		  </tr>
+		  <tr>
+			<td>Correct answer</td>
+			<td>A line that starts with <code>Correct Answer:</code> followed by the letter of the correct option (e.g. <code>Correct Answer: B</code>). Not case-sensitive.</td>
+		  </tr>
+		  <tr>
+			<td>Spacing between questions</td>
+			<td>A blank line or underscores (e.g. <code>______</code>) between questions is optional — both are ignored.</td>
+		  </tr>
+		</table>
+
+		<p><strong>Notes:</strong></p>
+		<ul>
+		  <li>Questions are numbered automatically in the output — the number after “Question” in your text is not used.</li>
+		  <li>Only one correct answer letter is supported per question.</li>
+		  <li>Any unrecognized line is treated as extra question text.</li>
+		</ul>
+
+		<h2>Step 2: Convert the File</h2>
+
+		<ol>
+		  <li>Open the converter tool in your browser.</li>
+		  <li>Click <strong>Choose File</strong> and select your <code>.txt</code> file.</li>
+		  <li>Click <strong>Convert</strong>.</li>
+		  <li>The converted JSON will appear in the output box.</li>
+		</ol>
+
+		<h2>Step 3: Download the JSON</h2>
+
+		<ol>
+		  <li>Review the preview.</li>
+		  <li>Click <strong>Download</strong>.</li>
+		  <li>The file saves with the same name but a <code>.json</code> extension.</li>
+		  <li>If no file was selected, it defaults to <code>quiz.json</code>.</li>
+		</ol>
+
+		<h2>Step 4: (Optional) Edit the Config Section</h2>
+
+		<p>Every converted file includes a <code>config</code> section:</p>
+
+		<pre>
+		"config": {
+		  "version": "",
+		  "exam_name": "",
+		  "link_base_url": "",
+		  "link_folder_name": "",
+		  "link_file_name": "",
+		  "link_terms": "",
+		  "shuffle_questions": true,
+		  "shuffle_options": true,
+		  "time_limit_minutes": 60
+		}
+		</pre>
+
+		<p>These fields are left blank or set to defaults — edit them manually after downloading.</p>
+
+		<h2>Troubleshooting</h2>
+
+		<ul>
+		  <li><strong>Download button stays disabled:</strong> Select a file and click Convert first.</li>
+		  <li><strong>A question is missing:</strong> Ensure the line starts with <code>Question</code> + number.</li>
+		  <li><strong>An option didn’t get captured:</strong> Must be formatted like <code>A. Text</code>.</li>
+		  <li><strong>Correct answer didn’t register:</strong> Must be exactly <code>Correct Answer: X</code>.</li>
+		</ul>
 	
 	
 	</td>
